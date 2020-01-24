@@ -1,0 +1,7 @@
+certifi==2019.11.28
+isodate==0.6.0
+pyparsing==2.4.6
+rdflib==4.2.2
+rdflib-jsonld==0.4.0
+six==1.14.0
+wincertstore==0.2
