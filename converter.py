@@ -31,15 +31,15 @@ def main(argv):
         jsonld_obj = json.load(json_file)
         if output_format:
             try:
-                jsonld_to_rdf(jsonld_obj, output_format)
+                jsonld_to_rdf(jsonld_obj, jsonld_filename.split('.jsonld')[0], output_format)
             except Exception:
                 available_serializers()
                 exit()
         else:
-            jsonld_to_rdf(jsonld_obj)
+            jsonld_to_rdf(jsonld_obj, jsonld_filename.split('.jsonld')[0])
 
 
-def jsonld_to_rdf(jsonld_obj, output_format=None):
+def jsonld_to_rdf(jsonld_obj, filename, output_format=None):
     """
 
     :param jsonld_obj: json object with LD context
@@ -59,11 +59,11 @@ def jsonld_to_rdf(jsonld_obj, output_format=None):
         'xml': 'rdf'
     }
     if output_format:
-        rdf_data = g.serialize(destination='output.{}'.format(formats[output_format]),
+        rdf_data = g.serialize(destination='{}.{}'.format(filename, formats[output_format]),
                                format=output_format)
     else:
         # By default serialize to rdf/xml
-        rdf_data = g.serialize(destination='output.rdf', format='pretty-xml')
+        rdf_data = g.serialize(destination='{}.rdf'.format(filename), format='pretty-xml')
 
     return rdf_data
 
