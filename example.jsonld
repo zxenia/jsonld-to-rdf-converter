@@ -1,0 +1,19 @@
+{
+  "@context": [
+    {
+      "schema": "https://schema.org/",
+      "Dataset": "schema:Dataset",
+      "title": {
+        "@id": "schema:name",
+        "@type": "schema:Text"
+      },
+      "description": {
+        "@id": "schema:description",
+        "@type": "schema:Text"
+      }
+    }
+  ],
+  "@type": "Dataset",
+  "title": "Test dataset",
+  "description": "This is a test dataset."
+}
