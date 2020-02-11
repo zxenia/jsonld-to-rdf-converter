@@ -69,7 +69,7 @@ def jsonld_to_rdf(jsonld_obj, filename, output_format=None):
 
 
 def help():
-    return logger.info('Usage: python converter.py --file=doc.jsonld [--format=ttl]')
+    return logger.info('Usage: python converter.py --file=doc.jsonld [--format=turtle]')
 
 
 def available_serializers():
