@@ -56,7 +56,8 @@ def jsonld_to_rdf(jsonld_obj, filename, output_format=None):
         'nt': 'nt',
         'trig': 'trig',
         'turtle': 'ttl',
-        'xml': 'rdf'
+        'xml': 'rdf',
+        'json-ld': 'json-ld'
     }
     if output_format:
         rdf_data = g.serialize(destination='{}.{}'.format(filename, formats[output_format]),
